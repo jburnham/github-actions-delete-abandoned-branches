@@ -12,6 +12,10 @@ inputs:
     description: "Comma-separated list of branches to ignore and never delete. You don't need to add your protected branches here."
     required: false
     default: ""
+  image:
+    description: "The docker image to use for the action"
+    required: false
+    default: "docker://phpdockerio/github-actions-delete-abandoned-branches:latest"
   last_commit_age_days:
     description: "How old in days must be the last commit into the branch for the branch to be deleted."
     required: false
@@ -37,7 +41,7 @@ outputs:
 
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: ${{ inputs.image }}
   args:
     - ${{ inputs.ignore_branches }}
     - ${{ inputs.last_commit_age_days }}
