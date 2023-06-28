@@ -26,7 +26,6 @@ A branch must meet all the following criteria to be deemed abandoned and safe to
 | Name  | Description | Example |
 | ------------- | ------------- | ------------- |
 | `ignore_branches`  | Comma-separated list of branches to ignore and never delete. You don't need to add your protected branches here.  | `foo,bar`
-| `image` | The docker image to use to run the action. Default: `docker://phpdockerio/github-actions-delete-abandoned-branches:latest` | `docker://phpdockerio/github-actions-delete-abandoned-branches:latest`
 | `last_commit_age_days` | How old in days must be the last commit into the branch for the branch to be deleted. Default: `60` | `90`
 | `prefixes` | Comma-separated list of prefixes a branch must match to be deleted. Default: `null` | `feature/,bugfix/`
 | `dry_run`* | Whether we're actually deleting branches at all. Possible values: `yes, no` (case sensitive). Default: `yes` | `no`
